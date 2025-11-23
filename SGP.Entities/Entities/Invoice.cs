@@ -10,7 +10,6 @@ namespace SGP.Domain.Entities
         public DateTime InvoiceDate { get; set; }
         public decimal TotalAmount { get; private set; }
         public virtual ICollection<InvoiceDetail> InvoiceDetails { get; set; } = new List<InvoiceDetail>();
-
         public void CalculateTotalAmount() 
         {
             decimal total = InvoiceDetails.Sum(d=> d.Quantity* d.UnitPrice);
