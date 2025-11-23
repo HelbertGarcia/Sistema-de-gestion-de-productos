@@ -1,6 +1,10 @@
+using SGP.Persistence.PersistenceServiceRegistration;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
+//Registro el servicio de persistencia
+builder.Services.AddPersistenceInfrastructure(builder.Configuration);
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
