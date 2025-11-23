@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SGP.Entities\SGP.Domain.csproj" />
+    <ProjectReference Include="..\SGP.Persistence\SGP.Persistence.csproj" />
+  </ItemGroup>
+
 </Project>
