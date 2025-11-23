@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="SGP.Api/SGP.Api.csproj" />
+  <Project Path="SGP.Entities/SGP.Domain.csproj" />
+  <Project Path="SGP.Persistence/SGP.Persistence.csproj" />
+  <Project Path="SGP.Services/SGP.Services.csproj" />
+</Solution>
