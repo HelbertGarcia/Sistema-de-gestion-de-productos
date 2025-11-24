@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SGP.Services.Interfaces.Customer;
+using SGP.Services.Interfaces.Invoice;
 using SGP.Services.Interfaces.Product;
 using SGP.Services.Services;
 
@@ -14,7 +15,8 @@ namespace SGP.Services.ServiceRegistration
             services.AddScoped<ICustomerService, CustomerService>();
 
             services.AddScoped<IProductService, ProductService>();
-            // Futuro: services.AddScoped<IInvoiceService, InvoiceService>();
+
+            services.AddScoped<IInvoiceService, InvoiceService>();
 
             return services;
         }
