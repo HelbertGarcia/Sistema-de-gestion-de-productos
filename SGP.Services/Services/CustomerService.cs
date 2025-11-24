@@ -15,8 +15,8 @@ namespace SGP.Services.Services
         }
         public async Task<CustomerDto> AddCustomerAsync(AddCustomerDto createCustomerDto)
         {
-            if(await _context.Customers.AnyAsync(c => c.Email == createCustomerDto.Email))
-            { 
+            if (await _context.Customers.AnyAsync(c => c.Email == createCustomerDto.Email))
+            {
                 throw new Exception("El correo electrónico ya está en uso.");
             }
             var customer = new Customer
@@ -74,19 +74,19 @@ namespace SGP.Services.Services
                 return null;
             }
 
-            customer!.Name = updateCustomerDto.Name!;
-                customer.Email = updateCustomerDto.Email!;
-                customer.Phone = updateCustomerDto.Phone!;
+            customer!.Name = updateCustomerDto.Name ?? customer.Name;
+            customer.Email = updateCustomerDto.Email ?? customer.Email;
+            customer.Phone = updateCustomerDto.Phone ?? customer.Phone;
 
-                await  _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
-                return new CustomerDto
-                {
-                    Id = customer.Id,
-                    Name = customer.Name,
-                    Email = customer.Email,
-                    Phone = customer.Phone
-                };
-        }  
+            return new CustomerDto
+            {
+                Id = customer.Id,
+                Name = customer.Name,
+                Email = customer.Email,
+                Phone = customer.Phone
+            };
+        }
     }
 }

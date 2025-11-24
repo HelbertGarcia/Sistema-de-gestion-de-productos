@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SGP.Services.Interfaces.Customer;
+using SGP.Services.Interfaces.Product;
 using SGP.Services.Services;
 
 namespace SGP.Services.ServiceRegistration
@@ -12,7 +13,7 @@ namespace SGP.Services.ServiceRegistration
             // Usamos Scoped porque utiliza el DbContext (que también es Scoped)
             services.AddScoped<ICustomerService, CustomerService>();
 
-            // Futuro: services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IProductService, ProductService>();
             // Futuro: services.AddScoped<IInvoiceService, InvoiceService>();
 
             return services;
