@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SGP.Domain.Base;
+﻿using SGP.Domain.Base;
 
 namespace SGP.Domain.Entities
 {
